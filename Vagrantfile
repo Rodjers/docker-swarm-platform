@@ -4,11 +4,9 @@
 # Vagrantfile for bootstrapping a development Consul cluster with
 # VirtualBox provider and Ansible provisioner
 
-ANSIBLE_PLAYBOOK = ENV['ANSIBLE_PLAYBOOK'] || "site.yml"
 VAGRANTFILE_API_VERSION = "2"
 BOX_MEM = ENV['BOX_MEM'] || "1536"
 BOX_NAME =  ENV['BOX_NAME'] || "debian/jessie64"
-CLUSTER_HOSTS = ENV['CLUSTER_HOSTS'] || "vagrant_hosts"
 HOST_BASENAME = "test"
 NUMBER_OF_HOSTS = 1
 
