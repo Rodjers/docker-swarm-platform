@@ -6,7 +6,7 @@
 
 VAGRANTFILE_API_VERSION = "2"
 BOX_MEM = ENV['BOX_MEM'] || "1536"
-BOX_NAME =  ENV['BOX_NAME'] || "debian/jessie64"
+BOX_NAME =  ENV['BOX_NAME'] || "centos/7"
 HOST_BASENAME = "test"
 NUMBER_OF_HOSTS = 1
 
@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   (1..NUMBER_OF_HOSTS).each do |i|
     config.vm.define "#{HOST_BASENAME}-#{i}" do |host_config|
       host_config.vm.box = BOX_NAME
-      host_config.vm.network :private_network, ip: "10.1.42.#{i}"
+      host_config.vm.network :private_network, ip: "10.1.42.#{i+1}"
       host_config.vm.hostname = "#{HOST_BASENAME}-#{i}"
       host_config.ssh.forward_agent = true
       host_config.vm.provider "virtualbox" do |v|
