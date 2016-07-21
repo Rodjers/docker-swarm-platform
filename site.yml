@@ -6,4 +6,4 @@
     - name: "Touch file"
       file: path=/home/vagrant/ansible_rsa.pub state=touch
   roles:
-    - loadbalancer
+    - docker
