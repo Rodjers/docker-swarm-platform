@@ -1,0 +1,6 @@
+[submodule "roles/docker-swarm"]
+	path = roles/docker-swarm
+	url = https://github.com/Rodjers/ansible-docker-swarm.git
+[submodule "roles/haproxy"]
+	path = roles/haproxy
+	url = https://github.com/Rodjers/ansible-haproxy.git
