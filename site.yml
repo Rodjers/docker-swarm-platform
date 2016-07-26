@@ -1,9 +1,18 @@
 ---
-- hosts: all
-  become: yes
-  become_user: root
-  tasks: 
-    - name: "Touch file"
-      file: path=/home/vagrant/ansible_rsa.pub state=touch
+- hosts: managers
   roles:
     - docker
+    - docker_manager
+
+- hosts: workers
+  roles:
+    - docker
+    - docker_worker
+
+- hosts: loadbalancers
+  vars_files:
+    - inventory/docker_services.yml
+  roles:
+    - ansible-haproxy
+
+- include: services.yml
