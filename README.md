@@ -19,3 +19,7 @@ Run this command to provision your machines with Ansible
 ```bash
 $ ansible-playbook site.yml
 ```
+In order to access the service you need to add an netry to /etc/hosts
+```bash
+$ echo "10.1.43.4 test.haproxy.local" | sudo tee -a /etc/hosts
+```
