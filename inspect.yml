@@ -1,0 +1,13 @@
+---
+- hosts: managers
+  vars_files:
+    - inventory/docker_services.yml
+  tasks:
+    - name: Create a docker service
+      shell: docker service inspect {{ item.name }}
+      with_items: docker_services
+      register: create_service
+      ignore_errors: yes
+      
+    - name: Debug
+      debug: var=create_service
