@@ -1,18 +1,16 @@
 ---
 - hosts: managers
   roles:
-    - docker
-    - docker_manager
+    - { role: docker-swarm, docker_role: 'manager' }
 
 - hosts: workers
   roles:
-    - docker
-    - docker_worker
+    - { role: docker-swarm, docker_role: 'worker' }
 
 - hosts: loadbalancers
   vars_files:
     - inventory/docker_services.yml
   roles:
-    - ansible-haproxy
+    - haproxy
 
 - include: services.yml
