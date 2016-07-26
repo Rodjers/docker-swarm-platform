@@ -7,6 +7,11 @@ Ansible playbook to set up a two node Docker Swarm cluster with one HAProxy load
 * Vagrant
 
 ## Getting started 
+After cloning this repo you need to get the submodules which contains the roles.
+```bash
+$ git submodule init
+$ git submodule update
+```
 Run this command to set up the hosts with Vagrant
 ```bash
 $ vagrant up
