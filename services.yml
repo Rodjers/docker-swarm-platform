@@ -5,11 +5,11 @@
   tasks:
     - name: Create a docker service
       shell: docker service create --replicas {{ item.scale }} --name {{ item.name }} -p {{ item.port }}:80 {{ item.image }}
-      with_items: docker_services
+      with_items: '{{ docker_services }}'
       register: create_service
       ignore_errors: yes
 
     - name: Update a docker service
       shell: docker service update --replicas {{ item.scale }} --name {{ item.name }} -p {{ item.port }}:80 --image {{ item.image }} {{ item.name }}
-      with_items: docker_services
+      with_items: '{{ docker_services }}'
       when: create_service|failed
