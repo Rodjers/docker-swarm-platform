@@ -1,5 +1,5 @@
 # docker-swarm-platform
-Ansible playbook to set up a two node Docker Swarm cluster with one HAProxy loadbalancer
+Ansible playbook to set up a two node Docker Swarm cluster with two HAProxy loadbalancers with keepalived
 
 
 ## Dependencies
