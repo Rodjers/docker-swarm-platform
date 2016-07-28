@@ -8,7 +8,7 @@ VAGRANTFILE_API_VERSION = "2"
 BOX_MEM = ENV['BOX_MEM'] || "1536"
 BOX_NAME =  ENV['BOX_NAME'] || "centos/7"
 HOST_BASENAME = "swarm"
-NUMBER_OF_HOSTS = 4
+NUMBER_OF_HOSTS = 5
 
 Vagrant.require_version ">= 1.5.0"
 

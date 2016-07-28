@@ -1,5 +1,5 @@
 docker_services:
   - name: test
-    scale: 3
+    scale: 5
     port: 8001
     image: httpd

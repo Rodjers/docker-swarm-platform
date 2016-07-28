@@ -1,12 +1,20 @@
 # File: vagrant_hosts
 
 [managers]
-10.1.43.2 host_name=one ansible_ssh_user=vagrant ansible_ssh_private_key_file=files/ansible_rsa
+10.1.43.2 
 [workers]
-10.1.43.3 host_name=two ansible_ssh_user=vagrant ansible_ssh_private_key_file=files/ansible_rsa
+10.1.43.3
+10.1.43.6
 [docker_nodes:children]
 managers
 workers
 [loadbalancers]
-10.1.43.4 keepalived_role=master ansible_ssh_user=vagrant ansible_ssh_private_key_file=files/ansible_rsa
-10.1.43.5 keepalived_role=slave ansible_ssh_user=vagrant ansible_ssh_private_key_file=files/ansible_rsa
+10.1.43.4 keepalived_role=master 
+10.1.43.5 keepalived_role=slave 
+[all_servers:children]
+managers
+workers
+loadbalancers
+[all:vars]
+ansible_ssh_user=vagrant
+ansible_ssh_private_key_file=files/ansible_rsa
