@@ -4,3 +4,6 @@
 [submodule "roles/haproxy"]
 	path = roles/haproxy
 	url = https://github.com/Rodjers/ansible-haproxy.git
+[submodule "roles/keepalived"]
+	path = roles/keepalived
+	url = https://github.com/Rodjers/ansible-keepalived.git

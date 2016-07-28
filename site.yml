@@ -12,5 +12,6 @@
     - inventory/docker_services.yml
   roles:
     - haproxy
+    - keepalived
 
 - include: services.yml
