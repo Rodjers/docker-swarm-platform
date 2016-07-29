@@ -11,7 +11,7 @@
       run_once: yes
 
     - name: Update a docker service
-      shell: docker service update --replicas {{ item.scale }} --name {{ item.name }} -p {{ item.port }}:80 --image {{ item.image }} {{ item.name }}
+      shell: docker service update --replicas {{ item.scale }} --name {{ item.name }} --image {{ item.image }} {{ item.name }}
       with_items: '{{ docker_services }}'
       when: create_service|failed
       run_once: yes

@@ -1,11 +1,7 @@
 ---
-- hosts: managers
+- hosts: docker_nodes
   roles:
-    - { role: docker-swarm, docker_role: 'manager' }
-
-- hosts: workers
-  roles:
-    - { role: docker-swarm, docker_role: 'worker' }
+    - docker-swarm
 
 - hosts: loadbalancers
   vars_files:

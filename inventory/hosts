@@ -1,10 +1,16 @@
 # File: vagrant_hosts
 
 [managers]
-10.1.43.2 
+10.1.43.2
+10.1.43.7
+10.1.43.8
+[managers:vars]
+docker_role=manager
 [workers]
 10.1.43.3
 10.1.43.6
+[workers:vars]
+docker_role=worker
 [docker_nodes:children]
 managers
 workers
