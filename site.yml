@@ -1,6 +1,7 @@
 ---
 - hosts: docker_nodes
   roles:
+    - go
     - docker-swarm
 
 - hosts: loadbalancers
