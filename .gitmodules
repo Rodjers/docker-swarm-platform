@@ -7,3 +7,6 @@
 [submodule "roles/keepalived"]
 	path = roles/keepalived
 	url = https://github.com/Rodjers/ansible-keepalived.git
+[submodule "roles/go"]
+	path = roles/go
+	url = https://github.com/jlund/ansible-go.git
