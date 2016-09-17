@@ -9,6 +9,10 @@
     - inventory/docker_services.yml
   roles:
     - haproxy
-    - keepalived
+    - { role: keepalived, keepalived_shared_ip: "10.1.43.200", keepalived_shared_iface: "eth1" }
+
+- hosts: consul_nodes
+  roles:
+    - { role: consul, consul_group_name: "consul_nodes" }
 
 - include: services.yml

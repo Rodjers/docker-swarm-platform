@@ -2,21 +2,25 @@
 
 [managers]
 10.1.43.2
-10.1.43.7
-10.1.43.8
+10.1.43.3
+10.1.43.4
 [managers:vars]
 docker_role=manager
 [workers]
-10.1.43.3
-10.1.43.6
+#10.1.43.5
+#10.1.43.6
 [workers:vars]
 docker_role=worker
 [docker_nodes:children]
 managers
 workers
+[consul_nodes]
+10.1.43.2 consul_node_role=bootstrap
+10.1.43.3 consul_node_role=server
+10.1.43.4 consul_node_role=server
 [loadbalancers]
-10.1.43.4 keepalived_role=master 
-10.1.43.5 keepalived_role=slave 
+10.1.43.5 keepalived_role=master 
+10.1.43.6 keepalived_role=slave 
 [all_servers:children]
 managers
 workers
