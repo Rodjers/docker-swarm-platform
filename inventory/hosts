@@ -21,6 +21,8 @@ workers
 [loadbalancers]
 10.1.43.5 keepalived_role=master 
 10.1.43.6 keepalived_role=slave 
+[monitors]
+10.1.43.7
 [all_servers:children]
 managers
 workers

@@ -10,3 +10,12 @@
 [submodule "roles/go"]
 	path = roles/go
 	url = https://github.com/jlund/ansible-go.git
+[submodule "roles/grafana"]
+	path = roles/grafana
+	url = https://github.com/picotrading/ansible-grafana.git
+[submodule "roles/prometheus"]
+	path = roles/prometheus
+	url = https://github.com/William-Yeh/ansible-prometheus
+[submodule "templates/encoder"]
+	path = templates/encoder
+	url = https://github.com/picotrading/config-encoder-macros

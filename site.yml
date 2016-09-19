@@ -15,4 +15,28 @@
   roles:
     - { role: consul, consul_group_name: "consul_nodes" }
 
+- hosts: monitors
+  become: yes
+  become_user: root
+  tasks:
+    - name: Add yumrepo
+      yum_repository: name=Grafane baseurl=https://packagecloud.io/grafana/stable/el/7/x86_64 gpgcheck=no description=Grafanarepo
+- hosts: monitors
+  become: yes
+  become_user: root
+  roles:
+    - prometheus
+    - grafana
+
+  vars:
+    prometheus_components: [ "prometheus" ]
+    prometheus_conf_main: "template/prometheus.yml.j2"
+- hosts: all
+  become: yes
+  become_user: root
+  roles:
+    - prometheus
+
+  vars:
+    prometheus_components: [ "node_exporter" ]
 - include: services.yml
