@@ -19,3 +19,6 @@
 [submodule "templates/encoder"]
 	path = templates/encoder
 	url = https://github.com/picotrading/config-encoder-macros
+[submodule "roles/consul"]
+	path = roles/consul
+	url = https://github.com/Rodjers/ansible-consul
