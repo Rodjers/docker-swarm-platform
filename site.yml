@@ -30,7 +30,7 @@
 
   vars:
     prometheus_components: [ "prometheus" ]
-    prometheus_conf_main: "template/prometheus.yml.j2"
+    prometheus_conf_main: "templates/prometheus.yml.j2"
 - hosts: all
   become: yes
   become_user: root
